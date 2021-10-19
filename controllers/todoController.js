@@ -22,6 +22,10 @@ const urlEncodedParser = bodyParser.urlencoded({extended: false});
 
 module.exports = (app) =>{
 
+    app.get('/',(req,res)=>{
+        res.send('Please Enter /todo in the url');
+    })
+
     app.get('/todo',(req, res)=>{
         Todo.find({},(err,data)=>{
             if(err) throw err;
