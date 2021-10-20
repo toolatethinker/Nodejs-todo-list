@@ -1,4 +1,5 @@
 const express = require('express');
+//const process = require('process');
 
 let todoController = require('./controllers/todoController');
 
@@ -12,7 +13,7 @@ app.use(express.static('public'));
 
 todoController(app);
 
-
+console.log(process.env.PORT);
 app.listen(process.env.PORT || 3000);
 
 console.log("Listening to 3000")
